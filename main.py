@@ -34,7 +34,7 @@ class xbytes(TorrentProvider, MovieProvider):
 
     def _searchOnTitle(self, title, movie, quality, results):
 		log.info('Searching xbytes for %s, %d' % (title,self.getCatId(quality)[0]))
-		url = self.urls['search'] % (title.replace(':', ''), self.getCatId(quality)[0] )
+		url = self.urls['search'] % (title, self.getCatId(quality)[0] )
 		data = self.getHTMLData(url)
 		
 		log.debug('Received data from xbytes')
